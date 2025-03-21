@@ -58,7 +58,38 @@ class Alumno(Persona):
         print("\tMatrículas: ", self.__Asignaturas)
 
 class Profesor(Persona):
-    pass
+    def __init__(self):
+        self.__Antiguedad = ""
+        self.__Tutorias = ""
+        self.__Telefono = ""
+    
+    def getAntiguedad(self):
+        return self.__Antiguedad
+    
+    def setAntiguedad(self, antiguedad):
+        self.__Antiguedad = antiguedad
+    
+    def getTutorias(self):
+        return self.__Tutorias
+    
+    def setTutorias(self, tutorias):
+        self.__Tutorias = tutorias
+        
+
+    def getTelefono(self):
+        return self.__Telefono    
+    def setTelefono(self, telefono):
+        self.__Telefono = telefono
+
+    def mostrarProfesor(self):
+        print("Profesor")
+        print("\tNombre: ", self.getNombre())
+        print("\tApellidos: ", self.getApellidos())
+        print("\tEdad: ", self.getEdad())
+        print("\tAntiguedad: ", self.__Antiguedad)
+        print("\tTutorias: ", self.__Tutorias)
+        print("\tTelefono: ", self.__Telefono)
+
 
 # metodo principal
 def main():
@@ -69,6 +100,16 @@ def main():
     alumno.setCurso("Bachillerato")
     alumno.setAsignaturas(["Matemáticas", "Tecnología", "Inglés"])
     alumno.mostrarAlumno()
+
+    profesor = Profesor()
+    profesor.setNombre("Néstor Jesus")
+    profesor.setApellidos("Páez Sarmiento")
+    profesor.setEdad(25)
+    profesor.setAntiguedad("3 años")
+    profesor.setTutorias(["Matemáticas de 12:30 a 2:30", "Sandwuchadas 3:40 a 4:40", "Inglés de 5:00 a 6:45"])
+    profesor.setTelefono("3105852023")
+    profesor.mostrarProfesor()
+
 
 if __name__ == "__main__":
     main()
